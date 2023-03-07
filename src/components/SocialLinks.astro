@@ -8,17 +8,20 @@ export interface Props {
 const { name, url, image } = Astro.props;
 ---
 
-  <li class="social-card">
-    <a href={url}>
-      <img src={image} alt={name} />
-      <h2>
-        {name}
-        <span>&rarr;</span>
-      </h2>
-    </a>
-  </li>
+<li class="social-card">
+  <a href={url}>
+    <img src={image} alt={name} />
+    <h2 class="social-label">
+      {name}
+    </h2>
+  </a>
+</li>
 
 <style>
+  .social-label {
+    margin-bottom: 0;
+
+  }
   .social-card {
     text-align: center;
     cursor: pointer;
@@ -48,8 +51,8 @@ const { name, url, image } = Astro.props;
     background-color: white;
     opacity: 0.8;
   }
-  .social-card img{
-    max-width:80px;
+  .social-card img {
+    max-width: 60px;
   }
   .social-card:is(:hover, :focus-within) {
     background-position: 0;
