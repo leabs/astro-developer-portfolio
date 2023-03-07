@@ -5,7 +5,7 @@ import rocket from "../assets/rocket.svg";
 import AppCards from "../components/AppCards.astro";
 import repoData from "../data/repos.json";
 export interface Props {
-  repos: string;
+  url: string;
   name: string;
   description: string;
 }
@@ -13,11 +13,11 @@ export interface Props {
 
 <Layout title="Projects" description="Some of my projects">
   <Image
-    class="project banner-image"
+    class="banner-image"
     src={rocket}
     width={100}
     height={100}
-    alt="person illustration for the home page"
+    alt="rocket illustration for the project page"
   />
   <h2>Featured Code Repos:</h2>
   <ul class="app-card-list">

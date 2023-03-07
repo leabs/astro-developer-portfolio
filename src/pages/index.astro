@@ -11,7 +11,7 @@ import socialData from "../data/social.json";
   description="Software Engineer, Tech Enthusiast, and a lover of all things tech"
 >
 
-  <ul class="app-card-list">
+  <ul class="app-card-list social-link-list">
   {
     socialData.map((socialData) => {
       return (
@@ -41,8 +41,10 @@ import socialData from "../data/social.json";
   <p>- ChatGPT</p>
 </Layout>
 
-<style is:global>
-  p {
-    line-height: 1.65rem;
+<style>
+  .social-link-list{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 </style>
