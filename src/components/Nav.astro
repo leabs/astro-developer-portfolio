@@ -1,41 +1,44 @@
 ---
 ---
+
 <nav class="navbar">
-  <a href="/">Astro</a>
-  <a href="/test">Test</a>
-  <a href="/hey/itsme">Itsme</a>
+  <a href="/">Home</a>
+  <a href="/projects">Projects</a>
+  <a href="/uses">Uses</a>
 </nav>
 
 <style>
-  .navbar{
-    margin-bottom:2rem;
+  .navbar {
+    margin: auto;
+    margin-bottom: 1.5rem;
+    text-align: center;
   }
   .navbar a {
     display: inline-block;
-    padding: 3px 10px;
+    font-size: 1.25rem;
+    padding: 12px 24px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.85);
-    border: 2px solid rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    border-radius: 15px;
   }
   .navbar a:hover {
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
+    background: rgba(0, 0, 0, 0.015);
+    color: #000;
   }
-  .navbar a.active{
+  .navbar a.active {
     background: #fff;
-    color: green;
+    color: #000;
   }
 </style>
 
 <!--Set active class on nav when the page is active -->
 <script>
-  const nav = document.querySelector('.navbar');
-  const navLinks = nav.querySelectorAll('a');
+  const nav = document.querySelector(".navbar");
+  const navLinks = nav.querySelectorAll("a");
   const currentURL = window.location.href;
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     if (link.href === currentURL) {
-      link.classList.add('active');
+      link.classList.add("active");
     }
   });
 </script>

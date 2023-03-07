@@ -1,12 +1,12 @@
 ---
 export interface Props {
   title: string;
-  subtitle: string;
   description: string;
 }
 
-const { title, subtitle, description } = Astro.props;
+const { title, description } = Astro.props;
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -22,13 +22,10 @@ import Nav from "../components/Nav.astro";
   <body>
     <Nav />
     <main>
-      <h1>{title}</h1>
-      <p class="instructions">
-        {subtitle}
-      </p>
-
+      <h1 class="page-title">{title}</h1>
       <slot />
     </main>
+    <Footer title="John Doe" />
   </body>
 </html>
 <style is:global>
@@ -40,6 +37,8 @@ import Nav from "../components/Nav.astro";
       #da62c4 30%,
       white 60%
     );
+    --highlight: blue;
+    --border-radius: 0.4rem;
   }
   html {
     font-family: system-ui, sans-serif;
@@ -49,20 +48,45 @@ import Nav from "../components/Nav.astro";
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
+  .app-card-list{
+    padding-left:0;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .app-card-list li{
+    flex:1;
+    flex-basis: 30%;
+    margin:.5rem;
+  }
+  .banner-image{
+    display: block;
+    max-width:100px;
+    margin: 2rem auto;
+  }
+  .page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+  }
+  .description{
+    text-align: center;
+  }
   .instructions {
     line-height: 1.6;
     margin: 1rem 0;
     border: 1px solid rgba(var(--accent), 25%);
     background-color: white;
     padding: 1rem;
-    border-radius: 0.4rem;
+    border-radius: var(--border-radius);
   }
   .instructions code {
     font-size: 0.875em;
     font-weight: bold;
     background: rgba(var(--accent), 12%);
     color: rgb(var(--accent));
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     padding: 0.3em 0.45em;
   }
   .instructions strong {
@@ -77,5 +101,8 @@ import Nav from "../components/Nav.astro";
     font-size: 3rem;
     font-weight: 800;
     margin: 0;
+  }
+  h1, h2, h3, h4, h5{
+    color: rgba(0,0,0,0.85);
   }
 </style>

@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Github",
+    "url": "https://github.com/leabs",
+    "image": "src/assets/github.svg"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/leabs/",
+    "image": "src/assets/linkedin.svg"
+  }
+  ,
+  {
+    "name": "Medium",
+    "url": "https://www.medium.com",
+    "image": "src/assets/medium.svg"
+  }
+  ,
+  {
+    "name": "Email",
+    "url": "mailto: JohnDoe@gmail.com",
+    "image": "src/assets/envelope.svg"
+  }
+]

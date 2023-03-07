@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Google Chrome",
+    "url": "https://www.google.com/chrome/",
+    "description": "Browser of Choice"
+  },
+  {
+    "name": "Visual Studio Code",
+    "url": "https://code.visualstudio.com/",
+    "description": "How I edit code"
+  },
+  {
+    "name": "Spotify",
+    "url": "https://www.spotify.com/",
+    "description": "Music"
+  },
+  {
+    "name": "Discord",
+    "url": "https://discordapp.com/",
+    "description": "Personal and Project Chat"
+  },
+  { "name": "Slack", "url": "https://slack.com/", "description": "Work Chat" },
+  {
+    "name": "Github",
+    "url": "https://github.com",
+    "description": "Git service"
+  }
+  ,
+  {
+    "name": "Astro",
+    "url": "https://astro.build",
+    "description": "Awesome Web Framework"
+  }
+]

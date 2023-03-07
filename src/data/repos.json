@@ -1,0 +1,22 @@
+[
+  {
+    "name": "leetcode-answers ",
+    "url": "https://github.com/leabs/leetcode-answers",
+    "description": "Jekyll daily blog solving the LeetCode question of the day in JS"
+  },
+  {
+    "name": "learning-astro",
+    "url": "https://github.com/leabs/learning-astro",
+    "description": "Repo for learning astro web framework"
+  },
+  {
+    "name": "misc-python-apps",
+    "url": "https://github.com/leabs/misc-python-apps",
+    "description": "Some miscellaneous apps in Python that run in a terminal."
+  },
+  {
+    "name": "MMM-urbandictionary",
+    "url": "https://github.com/leabs/MMM-urbandictionary",
+    "description": "MagicMirror Module displaying random words from urbandictionary's API"
+  }
+]

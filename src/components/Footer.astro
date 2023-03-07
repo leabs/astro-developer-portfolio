@@ -1,0 +1,32 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="footer">
+  <footer>
+    <p class="footer-text">
+      Copyright &copy; <span>{title}</span> <span id="copyrightDate"></span> - All Rights Reserved
+    </p>
+  </footer>
+</div>
+
+<style>
+  .footer-text {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.85);
+  }
+</style>
+
+<!--Set current year as the date for the footer -->
+<script>
+  var date = new Date();
+  var year = date.getFullYear();
+  document.getElementById("copyrightDate").innerHTML = year;
+</script>
