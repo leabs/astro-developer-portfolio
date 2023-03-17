@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import star from "../assets/joke.svg";
+import AppCards from "../components/AppCards.astro";
+
+const response = await fetch(
+  "https://official-joke-api.appspot.com/random_ten"
+);
+const data = await response.json();
+---
+
+<Layout title="Jokes" description="Some of my jokes">
+  <Image
+    class="banner-image"
+    src={star}
+    width={100}
+    height={100}
+    alt="Star image for the jokes page"
+  />
+  <h2>Some Jokes:</h2>
+  <ul class="app-card-list">
+    <!--For each joke from response, render an appCard -->
+    {
+      data.map((anything) => {
+        return <AppCards name={anything.setup} description={anything.punchline} />;
+      })
+    }
+  </ul>
+</Layout>
