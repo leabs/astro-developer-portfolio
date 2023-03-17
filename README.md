@@ -1,5 +1,9 @@
 # Astro Developer Protfolio
 
+At the moment, I'm using this repo for a youtube series on how to build stuff using Astro. I'll be adding more to this repo as I go along.
+
+[The Youtube playlist](https://www.youtube.com/playlist?list=PLieFqTElnpVy492IgVFSVsafnhsHiDK2W)
+
 This is a barebones starter developer protfolio for Astro.
 
 - Simple layout for developers to make their own portfolio
