@@ -4,32 +4,36 @@ import { Image } from "@astrojs/image/components";
 import SocialLinks from "../components/SocialLinks.astro";
 import person from "../assets/person.svg";
 import socialData from "../data/social.json";
+
+//React
+import MyReactComponent from "../components/MyReactComponent.jsx";
 ---
 
 <Layout
   title="John Doe"
   description="Software Engineer, Tech Enthusiast, and a lover of all things tech"
 >
-<Image
-class="banner-image"
-src={person}
-width={100}
-height={100}
-alt="person illustration for the home page"
-/>
+  <MyReactComponent client:load />
+  <Image
+    class="banner-image"
+    src={person}
+    width={100}
+    height={100}
+    alt="person illustration for the home page"
+  />
 
   <ul class="app-card-list social-link-list">
-  {
-    socialData.map((socialData) => {
-      return (
-        <SocialLinks
-          name={socialData.name}
-          url={socialData.url}
-          image={socialData.image}
-        />
-      );
-    })
-  }
+    {
+      socialData.map((socialData) => {
+        return (
+          <SocialLinks
+            name={socialData.name}
+            url={socialData.url}
+            image={socialData.image}
+          />
+        );
+      })
+    }
   </ul>
   <h2>About:</h2>
   <p>
@@ -49,8 +53,8 @@ alt="person illustration for the home page"
 </Layout>
 
 <style>
-  .social-link-list{
-    display:flex;
+  .social-link-list {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
