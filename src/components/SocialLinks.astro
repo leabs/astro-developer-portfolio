@@ -28,7 +28,7 @@ const { name, url, image } = Astro.props;
     list-style: none;
     display: flex;
     flex-direction: row;
-    flex: 200px;
+    flex: 100px;
     padding: 0.25rem;
     background-color: white;
     background-image: none;
@@ -59,6 +59,6 @@ const { name, url, image } = Astro.props;
     background-image: var(--accent-gradient);
   }
   .social-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent));
+    color: var(--accent);
   }
 </style>

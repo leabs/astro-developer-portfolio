@@ -4,8 +4,8 @@
 <nav class="navbar">
   <a href="/"><span>Home</span></a>
   <a href="/projects">Projects</a>
+  <a href="/about">About</a>
   <a href="/apps">Apps</a>
-  <a href="/jokes">Jokes</a>
 </nav>
 
 <style>
@@ -15,20 +15,18 @@
     text-align: center;
   }
   .navbar a.active {
-    background:#fff;
     color:#000;
+    border-bottom: 3px solid var(--accent);
   }
   .navbar a {
     display: inline-block;
-    font-size: 1.25em;
-    margin: 0.25rem;
+    font-size: 1.2em;
+    margin: 0.15rem;
     font-weight: bold;
-    padding: 12px 12px;
+    padding: 6px 6px;
     text-decoration: none;
     color: rgba(0,0,0,0.85);
-    border-radius: 15px;
     transition: background-position 0.6s cubic-bezier(0.22,1,0.36,1);
-    box-shadow: 0 4px 6px  rgba(0,0,0,.01);
   }
   .navbar a:hover {
     background: rgba(0, 0, 0, 0.015);

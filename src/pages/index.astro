@@ -5,15 +5,13 @@ import SocialLinks from "../components/SocialLinks.astro";
 import person from "../assets/person.svg";
 import socialData from "../data/social.json";
 
-//React
-import MyReactComponent from "../components/MyReactComponent.jsx";
 ---
 
 <Layout
   title="John Doe"
   description="Software Engineer, Tech Enthusiast, and a lover of all things tech"
 >
-  <MyReactComponent client:load />
+  
   <Image
     class="banner-image"
     src={person}

@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import image from "@astrojs/image";
 
@@ -7,5 +7,19 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [image(), react()]
+  integrations: [
+    image(),
+    react(),
+    NetlifyCMS({
+      config: {
+        backend: {
+          name: "git-gateway",
+          branch: "main",
+        },
+        collections: [
+          // Content collections
+        ],
+      },
+    }),
+  ],
 });

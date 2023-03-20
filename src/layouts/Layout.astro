@@ -7,6 +7,9 @@ export interface Props {
 const { title, description } = Astro.props;
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+
+//Import .env variables
+
 ---
 
 <!DOCTYPE html>
@@ -30,11 +33,12 @@ import Footer from "../components/Footer.astro";
 </html>
 <style is:global>
   :root {
-    --accent: 124, 58, 237;
+    --accent: #E96479;
+    --secondary: #4D455D;
     --accent-gradient: linear-gradient(
       45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
+      var(--accent),
+      var(--secondary),
       white 60%
     );
     --highlight: blue;
@@ -42,7 +46,7 @@ import Footer from "../components/Footer.astro";
   }
   html {
     font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
+    background-color: #F5E9CF;
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -73,25 +77,6 @@ import Footer from "../components/Footer.astro";
   .description{
     text-align: center;
   }
-  .instructions {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-  }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
-    color: rgb(var(--accent));
-    border-radius: var(--border-radius);
-    padding: 0.3em 0.45em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent));
-  }
   body {
     margin: auto;
     padding: 1.5rem;
@@ -105,4 +90,103 @@ import Footer from "../components/Footer.astro";
   h1, h2, h3, h4, h5{
     color: rgba(0,0,0,0.85);
   }
+  .spotify-recently-played{
+    background:#fff;
+    border-radius: var(--border-radius);
+    padding:6px;
+  }
+  .spotify-recently-played li{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 1rem;
+    padding: .5rem;
+
+  }
+  .spotify-recently-played img{
+    max-height:150px;
+    width: auto;
+    border-radius: var(--border-radius);
+  }
+  .spotify-recently-played .track-info  p{
+    margin: 0;
+    line-height: 1.5rem;
+
+  }
+  .spotify-recently-played .track-info{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .spotify-recently-played .track-info .track-name{
+    font-weight: bold;
+    font-size:1.1rem;
+  }
+  @-webkit-keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-forever {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  -webkit-animation-duration: 0.75s;
+  -moz-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: rotate-forever;
+  -moz-animation-name: rotate-forever;
+  animation-name: rotate-forever;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  animation-timing-function: linear;
+  height: 30px;
+  width: 30px;
+  border: 8px solid var(--accent);
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+}
 </style>
