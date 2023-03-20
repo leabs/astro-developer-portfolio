@@ -7,19 +7,5 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    image(),
-    react(),
-    NetlifyCMS({
-      config: {
-        backend: {
-          name: "git-gateway",
-          branch: "main",
-        },
-        collections: [
-          // Content collections
-        ],
-      },
-    }),
-  ],
+  integrations: [image(), react()],
 });
