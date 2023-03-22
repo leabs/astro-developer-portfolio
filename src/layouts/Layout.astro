@@ -6,10 +6,8 @@ export interface Props {
 
 const { title, description } = Astro.props;
 import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
 
 //Import .env variables
-
 ---
 
 <!DOCTYPE html>
@@ -21,6 +19,9 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
     <Nav />
@@ -28,13 +29,12 @@ import Footer from "../components/Footer.astro";
       <h1 class="page-title">{title}</h1>
       <slot />
     </main>
-    <Footer title="John Doe" />
   </body>
 </html>
 <style is:global>
   :root {
-    --accent: #E96479;
-    --secondary: #4D455D;
+    --secondary: rgba(32,38,57,1);
+    --accent: rgba(63,76,119,1);
     --accent-gradient: linear-gradient(
       45deg,
       var(--accent),
@@ -45,8 +45,24 @@ import Footer from "../components/Footer.astro";
     --border-radius: 0.4rem;
   }
   html {
-    font-family: system-ui, sans-serif;
-    background-color: #F5E9CF;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height:100dvh;
+  }
+
+body{
+  background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+  body h1,
+  body h2,
+  body {
+    color: #fff;
   }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -55,17 +71,17 @@ import Footer from "../components/Footer.astro";
   p {
     line-height: 1.65rem;
   }
-  .app-card-list{
-    padding-left:0;
+  .app-card-list {
+    padding-left: 0;
   }
-  .app-card-list li{
-    flex:1;
-    flex-basis: 30%;
-    margin:.5rem;
+  .app-card-list li {
+    flex: 1;
+
+    margin: 0.5rem;
   }
-  .banner-image{
+  .banner-image {
     display: block;
-    max-width:100px;
+    max-width: 100px;
     margin: 2rem auto;
   }
   .page-title {
@@ -74,119 +90,121 @@ import Footer from "../components/Footer.astro";
     margin: 0;
     text-align: center;
   }
-  .description{
+  .description {
     text-align: center;
   }
   body {
     margin: auto;
     padding: 1.5rem;
-    max-width: 60ch;
+    max-width: 80ch;
   }
   h1 {
     font-size: 3rem;
     font-weight: 800;
     margin: 0;
   }
-  h1, h2, h3, h4, h5{
-    color: rgba(0,0,0,0.85);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: rgba(0, 0, 0, 0.85);
   }
-  .spotify-recently-played{
-    background:#fff;
+  .spotify-recently-played {
+    background: #fff;
     border-radius: var(--border-radius);
-    padding:6px;
+    padding: 6px;
   }
-  .spotify-recently-played li{
+  .spotify-recently-played li {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 1rem;
-    padding: .5rem;
-
+    padding: 0.5rem;
   }
-  .spotify-recently-played img{
-    max-height:150px;
+  .spotify-recently-played img {
+    max-height: 150px;
     width: auto;
     border-radius: var(--border-radius);
   }
-  .spotify-recently-played .track-info  p{
+  .spotify-recently-played .track-info p {
     margin: 0;
     line-height: 1.5rem;
-
   }
-  .spotify-recently-played .track-info{
+  .spotify-recently-played .track-info {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
   }
-  .spotify-recently-played .track-info .track-name{
+  .spotify-recently-played .track-info .track-name {
     font-weight: bold;
-    font-size:1.1rem;
+    font-size: 1.1rem;
   }
   @-webkit-keyframes rotate-forever {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+  @-moz-keyframes rotate-forever {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-}
-@-moz-keyframes rotate-forever {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
+  @keyframes rotate-forever {
+    0% {
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+  .loading-spinner {
+    -webkit-animation-duration: 0.75s;
+    -moz-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: rotate-forever;
+    -moz-animation-name: rotate-forever;
+    animation-name: rotate-forever;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    height: 30px;
+    width: 30px;
+    border: 8px solid var(--accent);
+    border-right-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
   }
-}
-@keyframes rotate-forever {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-.loading-spinner {
-  -webkit-animation-duration: 0.75s;
-  -moz-animation-duration: 0.75s;
-  animation-duration: 0.75s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: rotate-forever;
-  -moz-animation-name: rotate-forever;
-  animation-name: rotate-forever;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  animation-timing-function: linear;
-  height: 30px;
-  width: 30px;
-  border: 8px solid var(--accent);
-  border-right-color: transparent;
-  border-radius: 50%;
-  display: inline-block;
-}
 </style>

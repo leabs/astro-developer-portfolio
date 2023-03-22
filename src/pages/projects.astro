@@ -1,25 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "@astrojs/image/components";
-import rocket from "../assets/rocket.svg";
 import AppCards from "../components/AppCards.astro";
 import repoData from "../data/repos.json";
 export interface Props {
   url: string;
   name: string;
   description: string;
+  projectType: string;
 }
 ---
 
-<Layout title="Projects" description="Some of my projects">
-  <Image
-    class="banner-image"
-    src={rocket}
-    width={100}
-    height={100}
-    alt="rocket illustration for the project page"
-  />
-  <h2>Featured Code Repos:</h2>
+<Layout title="Featured Projects" description="Some of my projects">
+
   <ul class="app-card-list">
   {
     repoData.map((repoData) => {
@@ -28,6 +20,7 @@ export interface Props {
           name={repoData.name}
           url={repoData.url}
           description={repoData.description}
+          projectType={repoData.projectType}
         />
       );
     })

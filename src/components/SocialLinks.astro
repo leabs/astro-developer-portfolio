@@ -11,9 +11,9 @@ const { name, url, image } = Astro.props;
 <li class="social-card">
   <a href={url}>
     <img src={image} alt={name} />
-    <h2 class="social-label">
+    <h3 class="social-label">
       {name}
-    </h2>
+    </h3>
   </a>
 </li>
 
@@ -52,7 +52,7 @@ const { name, url, image } = Astro.props;
     opacity: 0.8;
   }
   .social-card img {
-    max-width: 50px;
+    max-width: 40px;
   }
   .social-card:is(:hover, :focus-within) {
     background-position: 0;

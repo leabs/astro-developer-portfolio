@@ -1,22 +1,44 @@
 [
   {
-    "name": "leetcode-answers ",
-    "url": "https://github.com/leabs/leetcode-answers",
-    "description": "Jekyll daily blog solving the LeetCode question of the day in JS"
-  },
-  {
-    "name": "learning-astro",
-    "url": "https://github.com/leabs/learning-astro",
-    "description": "Repo for learning astro web framework"
+    "name": "zen-mode",
+    "url": "https://github.com/leabs/zen-mode",
+    "description": "Astro site that generates a dashboard of iframes and appends URL params",
+    "projectType": "/astro.svg"
   },
   {
     "name": "misc-python-apps",
     "url": "https://github.com/leabs/misc-python-apps",
-    "description": "Some miscellaneous apps in Python that run in a terminal."
+    "description": "Some miscellaneous apps in Python that run in a terminal.",
+    "projectType": "/python.png"
+  },
+  {
+    "name": "discord-hof-py-bot",
+    "url": "https://github.com/leabs/discord-hof-py-bot",
+    "description": "Discord bot that copies highly reacted messages to a hall of fame section",
+    "projectType": "/python.png"
   },
   {
     "name": "MMM-urbandictionary",
     "url": "https://github.com/leabs/MMM-urbandictionary",
-    "description": "MagicMirror Module displaying random words from urbandictionary's API"
+    "description": "MagicMirror Module displaying random words from urbandictionary's API",
+    "projectType": "/javascript.png"
+  },
+  {
+    "name": "leetcode-answers",
+    "url": "https://github.com/leabs/leetcode-answers",
+    "description": "Jekyll daily blog solving the LeetCode question of the day in JS",
+    "projectType": "/jekyll.svg"
+  },
+  {
+    "name": "jekyll-opine",
+    "url": "https://github.com/leabs/jekyll-opine",
+    "description": "A responsive Jekyll theme with built in search, commenting, and more.",
+    "projectType": "/jekyll.svg"
+  },
+  {
+    "name": "jekyll-product-table",
+    "url": "https://github.com/leabs/jekyll-product-table",
+    "description": "Converts markdown frontmatter into a sortable searchable DataTables table",
+    "projectType": "/jekyll.svg"
   }
 ]

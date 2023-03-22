@@ -3,20 +3,29 @@ export interface Props {
   name: string;
   url?: string;
   description: string;
+  projectType?: string;
 }
 
-const { name, url, description } = Astro.props;
+const { name, url, description, projectType } = Astro.props;
 ---
 
 <li class="link-card">
   <a href={url}>
-    <h2>
+    <h3>
       {name}
-      
+
       <span>&rarr;</span>
-    </h2>
+    </h3>
     <span>{description}</span>
   </a>
+  <!--If projectType -->
+  {
+    projectType && (
+      <div class="project-type">
+        <img src={projectType} alt="project type" />
+      </div>
+    )
+  }
 </li>
 <style>
   .link-card {
@@ -29,7 +38,7 @@ const { name, url, description } = Astro.props;
     background-size: 400%;
     border-radius: 0.6rem;
     background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: background-position 1s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
@@ -45,10 +54,11 @@ const { name, url, description } = Astro.props;
     background-color: white;
     opacity: 0.8;
   }
-  h2 {
+  h3 {
     margin: 0;
     font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: color 1s cubic-bezier(0.22, 1, 0.36, 1);
+    color: #111;
   }
   p {
     margin-top: 0.5rem;
@@ -61,5 +71,20 @@ const { name, url, description } = Astro.props;
   }
   .link-card:is(:hover, :focus-within) h2 {
     color: var(--accent);
+  }
+  .project-type {
+    min-width: 80px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .project-type img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  .link-card:is(:hover, :focus-within) .project-type img {
+    filter: invert(1);
+    transition: background-position .2s cubic-bezier(0.22, 1, 0.36, 1);
   }
 </style>

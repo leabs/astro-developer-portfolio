@@ -4,21 +4,17 @@ import { Image } from "@astrojs/image/components";
 import SocialLinks from "../components/SocialLinks.astro";
 import person from "../assets/person.svg";
 import socialData from "../data/social.json";
-
 ---
 
 <Layout
   title="John Doe"
   description="Software Engineer, Tech Enthusiast, and a lover of all things tech"
 >
-  
-  <Image
-    class="banner-image"
-    src={person}
-    width={100}
-    height={100}
-    alt="person illustration for the home page"
-  />
+  <p>
+    I'm a Frontend Web Developer with 6 years of experience. I have collaborated with a wide range of clients, from start-ups to larger companies. My areas of expertise include creating appealing styles, constructing layouts and components based on designs, and utilizing cutting-edge web development technologies. If you believe I can assist your business, please contact me.
+  </p>
+
+
 
   <ul class="app-card-list social-link-list">
     {
@@ -33,21 +29,6 @@ import socialData from "../data/social.json";
       })
     }
   </ul>
-  <h2>About:</h2>
-  <p>
-    As a software engineer, you are a highly skilled professional who is
-    responsible for designing, developing, testing, and maintaining software
-    applications. Your work involves understanding complex software systems,
-    analyzing user requirements, and writing clean, efficient code that meets
-    those requirements.
-  </p>
-
-  <p>
-    In addition to your technical skills, you are also a highly analytical
-    thinker who is able to solve complex problems and troubleshoot issues that
-    arise during the software development process.
-  </p>
-  <p>- ChatGPT</p>
 </Layout>
 
 <style>
@@ -55,5 +36,16 @@ import socialData from "../data/social.json";
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    
+  }
+  /*show all 4 in one row*/
+  .social-link-list > li {
+    flex: 1 1 25%;
+  }
+  p{
+    font-size:1.5rem;
+    line-height: 2.25rem;
   }
 </style>
