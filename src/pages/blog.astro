@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AppCards from "../components/AppCards.astro";
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<Layout title="Blog" description="My blog">
+  <!--Display all posts within the posts folder -->
+  <ul class="app-card-list">
+    {
+      allPosts.map((post) => {
+        return (
+          <AppCards
+            name={post.frontmatter.title}
+            url={post.url}
+            description={post.frontmatter.description}
+          />
+        );
+      })
+    }
+  </ul>
+</Layout>
