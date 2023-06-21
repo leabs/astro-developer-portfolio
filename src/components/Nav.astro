@@ -4,8 +4,9 @@
 <nav class="navbar">
   <a href="/"><span>Home</span></a>
   <a href="/projects">Projects</a>
-  <a href="/apps">Apps</a>
+  <a href="/videos">Videos</a>
   <a href="/blog">Blog</a>
+  <a href="/about">About</a>
 </nav>
 
 <style>
@@ -45,4 +46,9 @@
       link.classList.add("active");
     }
   });
+
+  //If the page is in the subdirectory /posts, set the blog link to active
+  if (currentURL.includes("/posts")) {
+    navLinks[3].classList.add("active");
+  }
 </script>

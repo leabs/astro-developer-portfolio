@@ -19,9 +19,12 @@ import Nav from "../components/Nav.astro";
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <Nav />
@@ -33,8 +36,8 @@ import Nav from "../components/Nav.astro";
 </html>
 <style is:global>
   :root {
-    --secondary: rgba(32,38,57,1);
-    --accent: rgba(63,76,119,1);
+    --secondary: rgba(32, 38, 57, 1);
+    --accent: rgba(63, 76, 119, 1);
     --accent-gradient: linear-gradient(
       45deg,
       var(--accent),
@@ -46,19 +49,22 @@ import Nav from "../components/Nav.astro";
   }
   html {
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height:100dvh;
+    min-height: 100dvh;
   }
 
-body{
-  background-image: linear-gradient( 112.1deg,  rgba(32,38,57,1) 11.4%, rgba(63,76,119,1) 70.2% );
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-
-}
+  body {
+    background-image: linear-gradient(
+      112.1deg,
+      rgba(32, 38, 57, 1) 11.4%,
+      rgba(63, 76, 119, 1) 70.2%
+    );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
   body h1,
   body h2,
   body {
@@ -103,41 +109,12 @@ body{
     font-weight: 800;
     margin: 0;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: rgba(0, 0, 0, 0.85);
+ 
+  .text-center{
+    text-align: center;
   }
-  .spotify-recently-played {
-    background: #fff;
-    border-radius: var(--border-radius);
-    padding: 6px;
-  }
-  .spotify-recently-played li {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 1rem;
-    padding: 0.5rem;
-  }
-  .spotify-recently-played img {
-    max-height: 150px;
-    width: auto;
-    border-radius: var(--border-radius);
-  }
-  .spotify-recently-played .track-info p {
-    margin: 0;
-    line-height: 1.5rem;
-  }
-  .spotify-recently-played .track-info {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-  }
-  .spotify-recently-played .track-info .track-name {
-    font-weight: bold;
-    font-size: 1.1rem;
+  .has-white-text{
+    color: #fff;
   }
   @-webkit-keyframes rotate-forever {
     0% {
